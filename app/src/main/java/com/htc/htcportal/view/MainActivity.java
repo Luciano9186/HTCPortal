@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         String user = shared.getString("user", "");
         String pass = shared.getString("pass", "");
         boolean isLogin = shared.getBoolean("login", false);
-        if (isLogin) {
+        if (!isLogin) {
             intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
             finish();

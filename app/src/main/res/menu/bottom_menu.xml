@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/bottom_home"
+        android:icon="@drawable/baseline_home_black_48"
+        android:title="@string/bottom_home" />
+    <item
+        android:id="@+id/bottom_info"
+        android:icon="@drawable/baseline_info_black_48"
+        android:title="@string/bottom_info" />
+    <item
+        android:id="@+id/bottom_market"
+        android:icon="@drawable/baseline_bar_chart_black_48"
+        android:title="@string/bottom_market" />
+    <item
+        android:id="@+id/bottom_regulations"
+        android:icon="@drawable/baseline_list_black_48"
+        android:title="@string/bottom_regulations" />
+    <item
+        android:id="@+id/bottom_job"
+        android:icon="@drawable/baseline_device_hub_black_48"
+        android:title="@string/bottom_bottom_job" />
+</menu>

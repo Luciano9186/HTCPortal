@@ -17,4 +17,9 @@
     <string name="title_new_repassword">Xác nhận mật khẩu mới</string>
     <string name="title_change_password">XÁC NHẬN THAY ĐỔI MẬT KHẨU</string>
     <string name="title_code">Mã xác nhận</string>
+    <string name="bottom_home">Trang chủ</string>
+    <string name="bottom_info">Thông tin</string>
+    <string name="bottom_market">Thị trường</string>
+    <string name="bottom_regulations">Quy định</string>
+    <string name="bottom_bottom_job">Công việc</string>
 </resources>
