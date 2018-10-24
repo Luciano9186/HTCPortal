@@ -29,6 +29,9 @@
         <activity
             android:name=".view.login.ResetPasswordActivity"
             android:theme="@style/LoginTheme" />
+        <activity
+            android:name=".view.user_info.UserInfoActivity"
+            android:theme="@style/MainTheme" />
     </application>
 
 </manifest>

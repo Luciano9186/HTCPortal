@@ -24,6 +24,7 @@ import android.widget.Toast;
 import com.htc.htcportal.R;
 import com.htc.htcportal.adapter.ViewPagerAdapter;
 import com.htc.htcportal.view.login.LoginActivity;
+import com.htc.htcportal.view.user_info.UserInfoActivity;
 
 public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener, BottomNavigationView.OnNavigationItemSelectedListener, NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
@@ -158,7 +159,8 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
                 break;
             //TODO: Drawer Nav Item
             case R.id.drawer_user_info:
-                Toast.makeText(this, R.string.drawer_user_info, Toast.LENGTH_SHORT).show();
+                intent = new Intent(this, UserInfoActivity.class);
+                startActivity(intent);
                 break;
             case R.id.drawer_my_work:
                 Toast.makeText(this, R.string.drawer_my_work, Toast.LENGTH_SHORT).show();

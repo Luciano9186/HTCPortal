@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/full_background"
+    android:fitsSystemWindows="true"
+    tools:context=".view.user_info.UserInfoActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/colorWhite"
+        app:contentInsetStart="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/ibBack"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="8dp"
+                android:background="@color/colorWhite"
+                android:src="@drawable/baseline_arrow_back_ios_black_48"
+                android:tint="@color/colorPrimary"
+                tools:ignore="ContentDescription" />
+
+            <EditText
+                android:id="@+id/etSearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="10dp"
+                android:layout_toStartOf="@id/ibNotification"
+                android:layout_toEndOf="@id/ibBack"
+                android:background="@drawable/layout_search"
+                android:cursorVisible="false"
+                android:drawableEnd="@drawable/baseline_search_black_24"
+                android:drawableTint="@color/colorIconGray"
+                android:hint="@string/title_search"
+                android:inputType="text"
+                android:textStyle="italic"
+                tools:ignore="Autofill,UnusedAttribute" />
+
+            <ImageButton
+                android:id="@+id/ibNotification"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="8dp"
+                android:background="@color/colorWhite"
+                android:src="@drawable/baseline_notifications_none_black_48"
+                android:tint="@color/colorPrimary"
+                tools:ignore="ContentDescription" />
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.Toolbar>
+
+    <View
+        android:id="@+id/lineTopView"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/toolbar"
+        android:background="@color/colorPrimary" />
+
+    <RelativeLayout
+        android:id="@+id/layoutBottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:adjustViewBounds="true"
+        tools:ignore="ContentDescription">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivAvatar"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="70dp"
+            android:src="@drawable/default_avatar"
+            app:civ_border_color="@color/colorPrimary"
+            app:civ_border_width="3dp" />
+
+        <ImageView
+            android:id="@+id/ivEdit"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="100dp"
+            android:layout_toEndOf="@id/ivAvatar"
+            android:background="@drawable/layout_button_edit"
+            android:src="@drawable/baseline_edit_black_48"
+            android:tint="@color/colorWhite" />
+
+    </RelativeLayout>
+</RelativeLayout>
