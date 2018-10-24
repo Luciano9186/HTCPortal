@@ -118,23 +118,37 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 
     }
 
+    public void checkViewPagerItem() {
+        int i = viewPager.getCurrentItem();
+
+        tvTitle.setVisibility(View.VISIBLE);
+        etSearch.setVisibility(View.GONE);
+
+        if (i == 0) {
+            tvTitle.setText(R.string.main_home_title);
+        } else if (i == 1) {
+            tvTitle.setText(R.string.main_info_title);
+        } else if (i == 2) {
+            tvTitle.setText(R.string.main_market_title);
+        } else {
+            tvTitle.setVisibility(View.GONE);
+            etSearch.setVisibility(View.VISIBLE);
+        }
+    }
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         //TODO: onNavigationItemSelected
         switch (menuItem.getItemId()) {
-
             //TODO: Bottom Nav Item
             case R.id.bottom_home:
                 viewPager.setCurrentItem(0);
-                tvTitle.setText(R.string.main_home_title);
                 break;
             case R.id.bottom_info:
                 viewPager.setCurrentItem(1);
-                tvTitle.setText(R.string.main_info_title);
                 break;
             case R.id.bottom_market:
                 viewPager.setCurrentItem(2);
-                tvTitle.setText(R.string.main_market_title);
                 break;
             case R.id.bottom_regulations:
                 viewPager.setCurrentItem(3);
@@ -159,17 +173,6 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
         checkViewPagerItem();
         drawerLayout.closeDrawer(GravityCompat.START);
         return false;
-    }
-
-    public void checkViewPagerItem() {
-        int i = viewPager.getCurrentItem();
-        if (i <= 2) {
-            tvTitle.setVisibility(View.VISIBLE);
-            etSearch.setVisibility(View.GONE);
-        } else {
-            tvTitle.setVisibility(View.GONE);
-            etSearch.setVisibility(View.VISIBLE);
-        }
     }
 
     @Override
