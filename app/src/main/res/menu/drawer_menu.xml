@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/drawer_user_info"
+        android:icon="@drawable/baseline_person_black_48"
+        android:title="@string/drawer_user_info" />
+    <item
+        android:id="@+id/drawer_my_work"
+        android:icon="@drawable/baseline_note_black_48"
+        android:title="@string/drawer_my_work" />
+    <item
+        android:id="@+id/drawer_favorite"
+        android:icon="@drawable/baseline_star_black_48"
+        android:title="@string/drawer_favorite" />
+    <item
+        android:id="@+id/drawer_settings"
+        android:icon="@drawable/baseline_settings_black_48"
+        android:title="@string/drawer_settings" />
+
+</menu>

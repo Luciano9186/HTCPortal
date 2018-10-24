@@ -12,16 +12,25 @@
     <string name="title_account">TÀI KHOẢN</string>
     <string name="title_input_email_address">Nhập địa chỉ email</string>
     <string name="message_forgot_password">Vui lòng nhập địa chỉ email để nhận mã xác nhận</string>
+
     <string name="title_send_code">GỬI MÃ XÁC NHẬN</string>
     <string name="title_new_password">Mật khẩu mới</string>
     <string name="title_new_repassword">Xác nhận mật khẩu mới</string>
     <string name="title_change_password">XÁC NHẬN THAY ĐỔI MẬT KHẨU</string>
     <string name="title_code">Mã xác nhận</string>
+    <string name="title_default_job">Nhân viên kinh doanh</string>
+    <string name="title_default_name">Nguyễn Văn A</string>
+    <string name="title_logout">ĐĂNG XUẤT</string>
+
     <string name="bottom_home">Trang chủ</string>
     <string name="bottom_info">Thông tin</string>
     <string name="bottom_market">Thị trường</string>
     <string name="bottom_regulations">Quy định</string>
     <string name="bottom_bottom_job">Công việc</string>
+    <string name="drawer_user_info">Thông tin cá nhân</string>
+    <string name="drawer_my_work">Công việc của tôi</string>
+    <string name="drawer_favorite">Yêu thích</string>
+    <string name="drawer_settings">Thiết lập</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
