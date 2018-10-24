@@ -1,3 +1,20 @@
 <resources>
-    <string name="app_name">HTCPortal</string>
+    <string name="app_name">HTC Portal</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_login">ĐĂNG NHẬP</string>
+    <string name="title_forget_password"><u>Quên mật khẩu</u></string>
+    <string name="title_password">MẬT KHẨU</string>
+    <string name="title_account">TÀI KHOẢN</string>
+    <string name="title_input_email_address">Nhập địa chỉ email</string>
+    <string name="message_forgot_password">Vui lòng nhập địa chỉ email để nhận mã xác nhận</string>
+    <string name="title_send_code">GỬI MÃ XÁC NHẬN</string>
+    <string name="title_new_password">Mật khẩu mới</string>
+    <string name="title_new_repassword">Xác nhận mật khẩu mới</string>
+    <string name="title_change_password">XÁC NHẬN THAY ĐỔI MẬT KHẨU</string>
+    <string name="title_code">Mã xác nhận</string>
 </resources>

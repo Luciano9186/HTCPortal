@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.login.LoginActivity">
+
+    <ImageView
+        android:id="@+id/ivTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/background"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/ivMid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ivTop"
+        android:layout_marginTop="-37dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/background_elip"
+        tools:ignore="ContentDescription" />
+
+    <RelativeLayout
+        android:id="@+id/layoutBottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/ivMid"
+        android:layout_marginTop="-37dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/background_gray"
+        android:fitsSystemWindows="true"
+        android:gravity="center"
+        android:padding="10dp"
+        tools:ignore="ContentDescription">
+
+        <EditText
+            android:id="@+id/etUser"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="-70dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/layout_edit_text"
+            android:cursorVisible="false"
+            android:gravity="center"
+            android:hint="@string/title_account"
+            android:inputType="text"
+            android:textSize="16sp"
+            tools:ignore="Autofill" />
+
+        <EditText
+            android:id="@+id/etPass"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@id/etUser"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/layout_edit_text"
+            android:cursorVisible="false"
+            android:gravity="center"
+            android:hint="@string/title_password"
+            android:inputType="textPassword"
+            android:textSize="16sp"
+            tools:ignore="Autofill" />
+
+        <Button
+            android:id="@+id/btLogin"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@id/etPass"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/layout_button"
+            android:text="@string/title_login"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvForgetPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btLogin"
+            android:layout_centerHorizontal="true"
+            android:text="@string/title_forget_password"
+            android:textColor="@color/colorLightBlue"
+            android:textSize="12sp"
+            android:textStyle="italic" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
