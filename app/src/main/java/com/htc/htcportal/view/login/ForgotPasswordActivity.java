@@ -57,7 +57,7 @@ public class ForgotPasswordActivity extends AppCompatActivity implements View.On
                 //TODO: Send Code
                 String email = etEmail.getText().toString();
                 if (forgotPasswordPresenter.emailValid(email)) {
-                    builder.setMessage("Mã xác nhận đã được gửi tới địa chỉ email \n" + email);
+                    builder.setMessage(R.string.dialog_send_code + "\n" + email);
                     builder.show();
                 } else {
                     Toast.makeText(this, "Email không hợp lệ", Toast.LENGTH_SHORT).show();

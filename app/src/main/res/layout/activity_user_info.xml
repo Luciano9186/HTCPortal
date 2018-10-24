@@ -1,105 +1,263 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/full_background"
+    android:background="@drawable/full_background2"
     android:fitsSystemWindows="true"
+    android:scrollbars="none"
     tools:context=".view.user_info.UserInfoActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_alignParentTop="true"
-        android:background="@color/colorWhite"
-        app:contentInsetStart="0dp">
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/colorWhite"
+            app:contentInsetStart="0dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/ibBack"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="8dp"
+                    android:background="@color/colorWhite"
+                    android:src="@drawable/baseline_arrow_back_ios_black_48"
+                    android:tint="@color/colorPrimary"
+                    tools:ignore="ContentDescription" />
+
+                <EditText
+                    android:id="@+id/etSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="10dp"
+                    android:layout_toStartOf="@id/ibNotification"
+                    android:layout_toEndOf="@id/ibBack"
+                    android:background="@drawable/layout_search"
+                    android:cursorVisible="false"
+                    android:drawableEnd="@drawable/baseline_search_black_24"
+                    android:drawableTint="@color/colorIconGray"
+                    android:hint="@string/title_search"
+                    android:inputType="text"
+                    android:textStyle="italic"
+                    tools:ignore="Autofill,UnusedAttribute" />
+
+                <ImageButton
+                    android:id="@+id/ibNotification"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp"
+                    android:background="@color/colorWhite"
+                    android:src="@drawable/baseline_notifications_none_black_48"
+                    android:tint="@color/colorPrimary"
+                    tools:ignore="ContentDescription" />
+            </RelativeLayout>
+
+        </android.support.v7.widget.Toolbar>
 
         <RelativeLayout
+            android:id="@+id/layoutBottom"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:layout_below="@id/toolbar"
+            android:adjustViewBounds="true"
+            tools:ignore="ContentDescription">
 
-            <ImageButton
-                android:id="@+id/ibBack"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
-                android:layout_marginStart="8dp"
-                android:background="@color/colorWhite"
-                android:src="@drawable/baseline_arrow_back_ios_black_48"
-                android:tint="@color/colorPrimary"
-                tools:ignore="ContentDescription" />
-
-            <EditText
-                android:id="@+id/etSearch"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivAvatar"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
+                android:layout_marginTop="70dp"
+                android:src="@drawable/default_avatar"
+                app:civ_border_color="@color/colorPrimary"
+                app:civ_border_width="3dp" />
+
+            <ImageView
+                android:id="@+id/ivEdit"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="100dp"
+                android:layout_toEndOf="@id/ivAvatar"
+                android:background="@drawable/layout_button_edit"
+                android:src="@drawable/baseline_edit_black_48"
+                android:tint="@color/colorWhite" />
+
+            <TextView
+                android:id="@+id/ivTitleName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ivAvatar"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="40dp"
+                android:text="@string/user_info_title_name"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/ivName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ivTitleName"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:text="@string/user_info_default_name"
+                android:textColor="@color/colorBlack"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/viewName"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/ivName"
                 android:layout_margin="10dp"
-                android:layout_toStartOf="@id/ibNotification"
-                android:layout_toEndOf="@id/ibBack"
-                android:background="@drawable/layout_search"
-                android:cursorVisible="false"
-                android:drawableEnd="@drawable/baseline_search_black_24"
-                android:drawableTint="@color/colorIconGray"
-                android:hint="@string/title_search"
-                android:inputType="text"
-                android:textStyle="italic"
-                tools:ignore="Autofill,UnusedAttribute" />
+                android:background="@color/colorLightGray" />
 
-            <ImageButton
-                android:id="@+id/ibNotification"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="8dp"
-                android:background="@color/colorWhite"
-                android:src="@drawable/baseline_notifications_none_black_48"
-                android:tint="@color/colorPrimary"
-                tools:ignore="ContentDescription" />
+            <TextView
+                android:id="@+id/ivTitlePart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/viewName"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="40dp"
+                android:text="@string/user_info_title_part"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/ivPart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ivTitlePart"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:text="@string/user_info_default_part"
+                android:textColor="@color/colorBlack"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/viewPart"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/ivPart"
+                android:layout_margin="10dp"
+                android:background="@color/colorLightGray" />
+
+            <TextView
+                android:id="@+id/ivTitleDepartment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/viewPart"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="40dp"
+                android:text="@string/user_info_title_department"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/ivDepartment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ivTitleDepartment"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:text="@string/user_info_default_department"
+                android:textColor="@color/colorBlack"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/viewDepartment"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/ivDepartment"
+                android:layout_margin="10dp"
+                android:background="@color/colorLightGray" />
+
+            <TextView
+                android:id="@+id/ivTitleEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/viewDepartment"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="40dp"
+                android:text="@string/user_info_title_email"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/ivEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ivTitleEmail"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:text="@string/user_info_default_email"
+                android:textColor="@color/colorBlack"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/viewEmail"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/ivEmail"
+                android:layout_margin="10dp"
+                android:background="@color/colorLightGray" />
+
+            <TextView
+                android:id="@+id/ivTitlePhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/viewEmail"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="40dp"
+                android:text="@string/user_info_title_phone"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/ivPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ivTitlePhone"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="40dp"
+                android:text="@string/user_info_default_phone"
+                android:textColor="@color/colorBlack"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/viewPhone"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/ivPhone"
+                android:layout_margin="10dp"
+                android:background="@color/colorLightGray" />
         </RelativeLayout>
-
-    </android.support.v7.widget.Toolbar>
-
-    <View
-        android:id="@+id/lineTopView"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_below="@id/toolbar"
-        android:background="@color/colorPrimary" />
-
-    <RelativeLayout
-        android:id="@+id/layoutBottom"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/toolbar"
-        android:adjustViewBounds="true"
-        tools:ignore="ContentDescription">
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/ivAvatar"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="70dp"
-            android:src="@drawable/default_avatar"
-            app:civ_border_color="@color/colorPrimary"
-            app:civ_border_width="3dp" />
-
-        <ImageView
-            android:id="@+id/ivEdit"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="100dp"
-            android:layout_toEndOf="@id/ivAvatar"
-            android:background="@drawable/layout_button_edit"
-            android:src="@drawable/baseline_edit_black_48"
-            android:tint="@color/colorWhite" />
-
     </RelativeLayout>
-</RelativeLayout>
+</ScrollView>
