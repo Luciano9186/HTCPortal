@@ -14,8 +14,7 @@ import com.htc.htcportal.R;
 import com.htc.htcportal.presenter.ForgotPasswordPresenter;
 
 public class ForgotPasswordActivity extends AppCompatActivity implements View.OnClickListener, DialogInterface.OnClickListener {
-
-
+    
     //Button
     private EditText etEmail;
     private Button btSend;
