@@ -11,7 +11,7 @@ import android.widget.Toast;
 import com.htc.htcportal.R;
 import com.htc.htcportal.presenter.ResetPasswordPresenter;
 
-public class ResetPasswordActivity extends AppCompatActivity implements View.OnClickListener {
+public class ResetPasswordActivity extends AppCompatActivity implements View.OnClickListener, ResetPasswordPresenter.OnResetPasswordPresenter {
 
     //Button
     private EditText etPass;
@@ -54,15 +54,19 @@ public class ResetPasswordActivity extends AppCompatActivity implements View.OnC
                 String pass = etPass.getText().toString();
                 String repass = etRepass.getText().toString();
                 String code = etCode.getText().toString();
-                
-                if(resetPasswordPresenter.checkValid(pass, repass, code)) {
-                    Toast.makeText(this, "Thay đổi mật khẩu thành công", Toast.LENGTH_SHORT).show();
-                    finish();
-                } else {
-                    Toast.makeText(this, "Xác nhận lại thông tin", Toast.LENGTH_SHORT).show();
-                }
-                
+                resetPasswordPresenter.doSubmit(pass, repass, code);
+
                 break;
+        }
+    }
+
+    @Override
+    public void onSubmit(boolean isSuccess) {
+        if(isSuccess) {
+            Toast.makeText(this, "Thay đổi mật khẩu thành công", Toast.LENGTH_SHORT).show();
+            finish();
+        } else {
+            Toast.makeText(this, "Xác nhận lại thông tin", Toast.LENGTH_SHORT).show();
         }
     }
 }

@@ -1,21 +1,25 @@
 package com.htc.htcportal.presenter;
 
-import android.content.Context;
 import android.text.TextUtils;
 
 public class ResetPasswordPresenter {
 
-    private Context context;
+    private OnResetPasswordPresenter onResetPasswordPresenter;
 
-    public ResetPasswordPresenter(Context context) {
-        this.context = context;
+
+    public ResetPasswordPresenter(OnResetPasswordPresenter listener) {
+        this.onResetPasswordPresenter = listener;
     }
 
-    public boolean checkValid(String pass, String repass, String code) {
+    public void doSubmit(String pass, String repass, String code) {
         if (TextUtils.isEmpty(pass) || TextUtils.isEmpty(repass) || TextUtils.isEmpty(code)) {
-            return false;
+            onResetPasswordPresenter.onSubmit(true);
         } else {
-            return pass.equals(repass);
+            onResetPasswordPresenter.onSubmit(false);
         }
+    }
+
+    public interface OnResetPasswordPresenter{
+        void onSubmit(boolean isSuccess);
     }
 }
