@@ -13,13 +13,17 @@ public class ResetPasswordPresenter {
 
     public void doSubmit(String pass, String repass, String code) {
         if (TextUtils.isEmpty(pass) || TextUtils.isEmpty(repass) || TextUtils.isEmpty(code)) {
-            onResetPasswordPresenter.onSubmit(true);
-        } else {
             onResetPasswordPresenter.onSubmit(false);
+        } else {
+            if (pass.equals(repass)) {
+                onResetPasswordPresenter.onSubmit(true);
+            } else {
+                onResetPasswordPresenter.onSubmit(false);
+            }
         }
     }
 
-    public interface OnResetPasswordPresenter{
+    public interface OnResetPasswordPresenter {
         void onSubmit(boolean isSuccess);
     }
 }

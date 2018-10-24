@@ -1,17 +1,24 @@
 package com.htc.htcportal.presenter;
 
-import android.content.Context;
 import android.text.TextUtils;
 
 public class LoginPresenter {
 
-    private Context context;
+    private OnLoginPresenter onLoginPresenter;
 
-    public LoginPresenter(Context context) {
-        this.context = context;
+    public LoginPresenter(OnLoginPresenter onLoginPresenter) {
+        this.onLoginPresenter = onLoginPresenter;
     }
 
-    public boolean userValid(String user, String pass) {
-        return !TextUtils.isEmpty(user) && !TextUtils.isEmpty(pass);
+    public void doSubmit(String user, String pass) {
+        if (TextUtils.isEmpty(user) || TextUtils.isEmpty(pass)) {
+            onLoginPresenter.onSubmit(false);
+        } else {
+            onLoginPresenter.onSubmit(true);
+        }
+    }
+
+    public interface OnLoginPresenter {
+        void onSubmit(boolean isSuccess);
     }
 }

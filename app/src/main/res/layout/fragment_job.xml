@@ -11,6 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="Công việc"
-        android:gravity="center"/>
+        android:gravity="center" />
 
 </RelativeLayout>

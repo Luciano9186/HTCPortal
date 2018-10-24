@@ -14,7 +14,7 @@ import com.htc.htcportal.R;
 import com.htc.htcportal.presenter.LoginPresenter;
 import com.htc.htcportal.view.MainActivity;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener, LoginPresenter.OnLoginPresenter {
 
     //Button
     private EditText etUser;
@@ -24,6 +24,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     //Intent
     protected Intent intent;
+
+    private String user, pass;
 
     //SharePreference
     private SharedPreferences shared;
@@ -62,28 +64,33 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         switch (v.getId()) {
             case R.id.btLogin:
                 //TODO: button Login
-                String user = etUser.getText().toString();
-                String pass = etPass.getText().toString();
-                if (loginPresenter.userValid(user, pass)) {
-                    editor = shared.edit();
-                    editor.putString("user", user);
-                    editor.putString("pass", pass);
-                    editor.putBoolean("login", true);
-                    editor.apply();
-
-                    Toast.makeText(this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
-                    intent = new Intent(this, MainActivity.class);
-                    startActivity(intent);
-                    finish();
-                } else {
-                    Toast.makeText(this, "Đăng nhập không thành công", Toast.LENGTH_SHORT).show();
-                }
+                user = etUser.getText().toString();
+                pass = etPass.getText().toString();
+                loginPresenter.doSubmit(user, pass);
                 break;
             case R.id.tvForgetPassword:
                 //TODO: button Forget Password
                 intent = new Intent(this, ForgotPasswordActivity.class);
                 startActivity(intent);
                 break;
+        }
+    }
+
+    @Override
+    public void onSubmit(boolean isSuccess) {
+        if (isSuccess) {
+            editor = shared.edit();
+            editor.putString("user", user);
+            editor.putString("pass", pass);
+            editor.putBoolean("login", true);
+            editor.apply();
+
+            Toast.makeText(this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
+            intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        } else {
+            Toast.makeText(this, "Đăng nhập không thành công", Toast.LENGTH_SHORT).show();
         }
     }
 }

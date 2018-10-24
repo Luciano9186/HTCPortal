@@ -18,10 +18,10 @@ public class ResetPasswordActivity extends AppCompatActivity implements View.OnC
     private EditText etRepass;
     private EditText etCode;
     private Button btSubmit;
-    
+
     //Presenter
     protected ResetPasswordPresenter resetPasswordPresenter;
-    
+
     //Intent
     protected Intent intent;
 
@@ -43,7 +43,7 @@ public class ResetPasswordActivity extends AppCompatActivity implements View.OnC
 
     private void viewSetup() {
         resetPasswordPresenter = new ResetPasswordPresenter(this);
-        
+
         btSubmit.setOnClickListener(this);
     }
 
@@ -62,7 +62,7 @@ public class ResetPasswordActivity extends AppCompatActivity implements View.OnC
 
     @Override
     public void onSubmit(boolean isSuccess) {
-        if(isSuccess) {
+        if (isSuccess) {
             Toast.makeText(this, "Thay đổi mật khẩu thành công", Toast.LENGTH_SHORT).show();
             finish();
         } else {
