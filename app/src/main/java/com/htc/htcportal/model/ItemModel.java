@@ -1,11 +1,11 @@
 package com.htc.htcportal.model;
 
-public class InfoModel {
+public class ItemModel {
 
     private String title;
     private int image;
 
-    public InfoModel(String title, int image) {
+    public ItemModel(String title, int image) {
         this.title = title;
         this.image = image;
     }

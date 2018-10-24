@@ -11,17 +11,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.htc.htcportal.R;
-import com.htc.htcportal.model.InfoModel;
+import com.htc.htcportal.model.ItemModel;
 
 import java.util.ArrayList;
 
 public class MarketFragmentAdapter extends RecyclerView.Adapter<MarketFragmentAdapter.InfoViewHolder> {
 
-    private ArrayList<InfoModel> ls;
+    private ArrayList<ItemModel> ls;
     private Context context;
     private LayoutInflater inflater;
 
-    public MarketFragmentAdapter(ArrayList<InfoModel> ls, Context context) {
+    public MarketFragmentAdapter(ArrayList<ItemModel> ls, Context context) {
         this.ls = ls;
         this.context = context;
         inflater = LayoutInflater.from(context);
@@ -36,14 +36,14 @@ public class MarketFragmentAdapter extends RecyclerView.Adapter<MarketFragmentAd
 
     @Override
     public void onBindViewHolder(@NonNull InfoViewHolder infoViewHolder, int i) {
-        final InfoModel infoModel = ls.get(i);
+        final ItemModel itemModel = ls.get(i);
 
-        infoViewHolder.ivImage.setImageResource(infoModel.getImage());
-        infoViewHolder.tvTitle.setText(infoModel.getTitle());
+        infoViewHolder.ivImage.setImageResource(itemModel.getImage());
+        infoViewHolder.tvTitle.setText(itemModel.getTitle());
         infoViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, infoModel.getTitle(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, itemModel.getTitle(), Toast.LENGTH_SHORT).show();
             }
         });
     }
