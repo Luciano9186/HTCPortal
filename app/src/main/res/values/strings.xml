@@ -62,4 +62,11 @@
     <string name="user_info_title_phone">Điện thoại liên hệ</string>
     <string name="user_info_default_phone">0912345678</string>
 
+    <string name="my_work_default_title">LỊCH HỌP</string>
+    <string name="my_work_default_from"><b>Đề xuất bởi:</b> sanghv@htc.com</string>
+    <string name="my_work_default_local">Địa điểm: Phòng họp số 206</string>
+    <string name="my_work_default_time">Thời gian: 17:00 27–7–2018</string>
+    <string name="my_work_default_desc">Miêu tả: Họp triển khai kinh doanh</string>
+    <string name="my_work_default_status">Chưa diễn ra</string>
+
 </resources>

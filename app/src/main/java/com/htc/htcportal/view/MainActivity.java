@@ -24,6 +24,7 @@ import android.widget.Toast;
 import com.htc.htcportal.R;
 import com.htc.htcportal.adapter.ViewPagerAdapter;
 import com.htc.htcportal.view.login.LoginActivity;
+import com.htc.htcportal.view.my_work.MyWorkActivity;
 import com.htc.htcportal.view.user_info.UserInfoActivity;
 
 public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener, BottomNavigationView.OnNavigationItemSelectedListener, NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
@@ -163,7 +164,8 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
                 startActivity(intent);
                 break;
             case R.id.drawer_my_work:
-                Toast.makeText(this, R.string.drawer_my_work, Toast.LENGTH_SHORT).show();
+                intent = new Intent(this, MyWorkActivity.class);
+                startActivity(intent);
                 break;
             case R.id.drawer_favorite:
                 Toast.makeText(this, R.string.drawer_favorite, Toast.LENGTH_SHORT).show();

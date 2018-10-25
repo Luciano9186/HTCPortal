@@ -32,6 +32,9 @@
         <activity
             android:name=".view.user_info.UserInfoActivity"
             android:theme="@style/MainTheme" />
+        <activity
+            android:name=".view.my_work.MyWorkActivity"
+            android:theme="@style/MainTheme" />
     </application>
 
 </manifest>
